@@ -130,14 +130,14 @@ export default function AuditLogsPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
         <StatCard
           title="Total Events"
-          value={stats?.totalLogs || '1,284'}
+          value={String(stats?.totalLogs ?? '1,284')}
           trend="+12%"
           icon={<Activity size={24} />}
           color="blue"
         />
         <StatCard
           title="Alerts (24h)"
-          value={stats?.errorLogs || '3'}
+          value={String(stats?.errorLogs ?? '3')}
           trend="Critical"
           icon={<AlertCircle size={24} />}
           color="rose"
@@ -151,7 +151,7 @@ export default function AuditLogsPage() {
         />
         <StatCard
           title="Daily Activity"
-          value={stats?.dailyAverage || '156'}
+          value={String(stats?.dailyAverage ?? '156')}
           trend="Stable"
           icon={<TrendingUp size={24} />}
           color="purple"
