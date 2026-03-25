@@ -46,8 +46,8 @@ fn create_agreement_helper(
             agent_commission_rate: 0,
         },
         payment_token: token.clone(),
-        metadata_uri: String::from_str(&env, "").clone(),
-        attributes: Vec::new(&env).clone(),
+        metadata_uri: String::from_str(env, "").clone(),
+        attributes: Vec::new(env).clone(),
     });
     id
 }
@@ -253,7 +253,7 @@ fn test_config_not_found_error() {
     env.mock_all_auths();
     let (client, _) = setup(&env);
 
-    client.get_deposit_interest_config(&String::from_str(&env, "NONEXISTENT"));
+    client.get_deposit_interest_config(&String::from_str(env, "NONEXISTENT"));
 }
 
 #[test]
